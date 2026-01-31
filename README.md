@@ -182,8 +182,6 @@ Het menu wordt beheerd in `hugo.toml`.
 | Build voltooid | ~1 minuut |
 | Live op website | ~1-2 minuten totaal |
 
-Je kunt de voortgang volgen op [app.netlify.com](https://app.netlify.com) onder "Deploys".
-
 ---
 
 ## Problemen?
@@ -205,4 +203,3 @@ Je kunt de voortgang volgen op [app.netlify.com](https://app.netlify.com) onder 
 ## Hulp
 
 - Markdown uitleg: [markdownguide.org](https://www.markdownguide.org/basic-syntax/)
-- Of vraag in de buurt-appgroep
