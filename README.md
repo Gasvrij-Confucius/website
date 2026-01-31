@@ -7,7 +7,7 @@ Deze handleiding is voor webredacteuren die de site beheren via GitHub.
 1. Je bewerkt of voegt bestanden toe in GitHub
 2. Netlify detecteert de wijziging automatisch
 3. De site wordt opnieuw gebouwd (~1-2 minuten)
-4. Wijzigingen zijn live op de website
+4. Wijzigingen zijn live op de website: [confucius-en-noorderhof.netlify.app](https://confucius-en-noorderhof.netlify.app) 
 
 ## Mappenstructuur
 
