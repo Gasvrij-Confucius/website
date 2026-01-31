@@ -1,0 +1,47 @@
+{{ define "main" }}
+<h1>{{ .Title }}</h1>
+
+{{ .Content }}
+
+{{ if eq .Section "documenten" }}
+<ul class="document-list">
+    {{ range .Pages }}
+    <li class="document-item">
+        <h3>{{ .Title }}</h3>
+        <div class="meta">{{ .Date.Format "2 January 2006" }}</div>
+        {{ if .Summary }}
+        <p>{{ .Summary }}</p>
+        {{ end }}
+        {{ if .Params.pdf }}
+        <a href="{{ .Params.pdf }}" target="_blank">📄 Download PDF</a>
+        {{ end }}
+        <a href="{{ .Permalink }}">Meer informatie →</a>
+    </li>
+    {{ end }}
+</ul>
+{{ else if eq .Section "nieuws" }}
+<ul class="news-list">
+    {{ range .Pages }}
+    <li class="news-item">
+        <div class="date">{{ .Date.Format "2 January 2006" }}</div>
+        <h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
+        {{ if .Summary }}
+        <p>{{ .Summary }}</p>
+        {{ end }}
+        <a href="{{ .Permalink }}">Lees meer →</a>
+    </li>
+    {{ end }}
+</ul>
+{{ else }}
+<ul>
+    {{ range .Pages }}
+    <li><a href="{{ .Permalink }}">{{ .Title }}</a></li>
+    {{ end }}
+</ul>
+{{ end }}
+
+{{ if eq (len .Pages) 0 }}
+<p>Er zijn nog geen items in deze sectie.</p>
+{{ end }}
+
+{{ end }}

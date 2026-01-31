@@ -1,0 +1,44 @@
+{{ define "main" }}
+<h1>Welkom bij dit buurtinitiatief</h1>
+
+{{ .Content }}
+
+<h2>Laatste Nieuws</h2>
+{{ $news := where .Site.RegularPages "Section" "nieuws" }}
+{{ if $news }}
+<ul class="news-list">
+    {{ range first 3 $news }}
+    <li class="news-item">
+        <div class="date">{{ .Date.Format "2 January 2006" }}</div>
+        <h3><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
+        {{ if .Summary }}
+        <p>{{ .Summary }}</p>
+        {{ end }}
+    </li>
+    {{ end }}
+</ul>
+<a href="/nieuws/" class="btn">Alle nieuwsberichten →</a>
+{{ else }}
+<p>Er zijn nog geen nieuwsberichten geplaatst.</p>
+{{ end }}
+
+<h2>Recente Documenten</h2>
+{{ $docs := where .Site.RegularPages "Section" "documenten" }}
+{{ if $docs }}
+<ul class="document-list">
+    {{ range first 3 $docs }}
+    <li class="document-item">
+        <h3>{{ .Title }}</h3>
+        <div class="meta">{{ .Date.Format "2 January 2006" }}</div>
+        {{ if .Params.pdf }}
+        <a href="{{ .Params.pdf }}" target="_blank">📄 Download PDF</a>
+        {{ end }}
+    </li>
+    {{ end }}
+</ul>
+<a href="/documenten/" class="btn">Alle documenten →</a>
+{{ else }}
+<p>Er zijn nog geen documenten beschikbaar.</p>
+{{ end }}
+
+{{ end }}

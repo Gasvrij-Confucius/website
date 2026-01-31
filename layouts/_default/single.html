@@ -1,0 +1,17 @@
+{{ define "main" }}
+<article>
+    <h1>{{ .Title }}</h1>
+    
+    {{ if .Date }}
+    <p class="date">{{ .Date.Format "2 January 2006" }}</p>
+    {{ end }}
+    
+    {{ if .Params.pdf }}
+    <div class="notice">
+        <p><strong>📄 PDF beschikbaar:</strong> <a href="{{ .Params.pdf }}" target="_blank">Download {{ .Title }}</a></p>
+    </div>
+    {{ end }}
+    
+    {{ .Content }}
+</article>
+{{ end }}

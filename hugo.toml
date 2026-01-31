@@ -1,0 +1,30 @@
+baseURL = 'https://aardgasvrij-confucius.nl/'
+languageCode = 'nl-nl'
+title = 'Confuciusbuurt & Noorderhof-Noord Aardgasvrij'
+
+[params]
+  description = 'Informatie over de buurtverkenning'
+  author = 'Granpré-Confucius-Collectief'
+
+[menu]
+  [[menu.main]]
+    name = 'Home'
+    url = '/'
+    weight = 1
+  [[menu.main]]
+    name = 'Nieuws'
+    url = '/nieuws/'
+    weight = 2
+  [[menu.main]]
+    name = 'Documenten'
+    url = '/documenten/'
+    weight = 3
+  [[menu.main]]
+    name = 'FAQ'
+    url = '/faq/'
+    weight = 4
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
